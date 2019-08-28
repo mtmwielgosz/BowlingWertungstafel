@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"/>
+
+    <style>
+        div {
+            margin: 10px;
+        }
+    </style>
+
+<h:head>
+    <title>JSF 2.0 Hello World</title>
+</h:head>
+<h:body>
+<div>
+
+    <h2 align="center">Bowling Wertungstafel</h2>
+    <br/>
+
+    <div style="display: inline-block">
+        <img src="bowling.jpg" class="img-thumbnail" alt="Bowling"/>
+    </div>
+
+    <div style="display: inline-block">
+
+        <table class="table table-bordered">
+            <tr>
+                <th class="tg-amwm" colspan="2">1</th>
+                <th class="tg-amwm" colspan="2">2</th>
+                <th class="tg-amwm" colspan="2">3</th>
+                <th class="tg-amwm" colspan="2">4</th>
+                <th class="tg-amwm" colspan="2">5</th>
+                <th class="tg-amwm" colspan="2">6</th>
+                <th class="tg-amwm" colspan="2">7</th>
+                <th class="tg-amwm" colspan="2">8</th>
+                <th class="tg-amwm" colspan="2">9</th>
+                <th class="tg-amwm" colspan="3">10</th>
+                <th class="tg-amwm">Summe</th>
+            </tr>
+            <tr>
+                <td class="tg-baqh"></td>
+                <td class="tg-baqh"></td>
+                <td class="tg-baqh"></td>
+                <td class="tg-baqh"></td>
+                <td class="tg-baqh"></td>
+                <td class="tg-baqh"></td>
+                <td class="tg-baqh"></td>
+                <td class="tg-baqh"></td>
+                <td class="tg-baqh"></td>
+                <td class="tg-baqh"></td>
+                <td class="tg-baqh"></td>
+                <td class="tg-baqh"></td>
+                <td class="tg-baqh"></td>
+                <td class="tg-baqh"></td>
+                <td class="tg-baqh"></td>
+                <td class="tg-baqh"></td>
+                <td class="tg-baqh"></td>
+                <td class="tg-baqh"></td>
+                <td class="tg-baqh"></td>
+                <td class="tg-baqh"></td>
+                <td class="tg-baqh"></td>
+                <td class="tg-baqh"></td>
+            </tr>
+            <tr>
+                <td class="tg-baqh" colspan="2"></td>
+                <td class="tg-baqh" colspan="2"></td>
+                <td class="tg-baqh" colspan="2"></td>
+                <td class="tg-baqh" colspan="2"></td>
+                <td class="tg-baqh" colspan="2"></td>
+                <td class="tg-baqh" colspan="2"></td>
+                <td class="tg-baqh" colspan="2"></td>
+                <td class="tg-baqh" colspan="2"></td>
+                <td class="tg-baqh" colspan="2"></td>
+                <td class="tg-baqh" colspan="3"></td>
+                <td class="tg-baqh"></td>
+            </tr>
+        </table>
+        <br/><br/>
+
+        <h:form class="form-inline" >
+            <label for="anzahlDerPins" class="mr-sm-2">Nächster Versuch:</label>
+            <a href="#" data-toggle="tooltip" title="Hooray!">
+                <span style="font-size: 1.5em; color: #1a75ff;">
+                    <i class="fas fa-info-circle"/>
+                </span>
+            </a>
+            <input type="text" class="form-control mb-2 mr-sm-2" id="anzahlDerPins"/>
+            <button type="button" class="btn btn-primary" id="submit">Speichern</button>
+            <div class="toast">
+                <div class="toast-body">
+                    Strike!
+                </div>
+            </div>
+        </h:form>
+    </div>
+
+</div>
+
+    <script>
+
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
+        $(document).ready(function(){
+            $("#submit").click(function(){
+                $('.toast').toast('show');
+            });
+        });
+
+    </script>
+
+</h:body>
+</html>
