@@ -1,5 +1,15 @@
 package systems.hedgehog.model;
 
 public enum Bonus {
-    STRIKE, SPARE, MISS
+    STRIKE("X"), SPARE("/"), MISS("-");
+
+    private String sign;
+
+    public String getSign() {
+        return sign;
+    }
+
+    Bonus(String sign) {
+        this.sign = sign;
+    }
 }

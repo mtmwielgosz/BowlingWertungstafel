@@ -5,6 +5,8 @@ import java.util.OptionalInt;
 
 public class BowlingThrow {
 
+    public static final Integer MAX_SCORES = 10;
+
     private OptionalInt scores;
     private Optional<Bonus> bonus;
 

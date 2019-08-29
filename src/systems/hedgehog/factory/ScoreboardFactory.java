@@ -16,16 +16,17 @@ public class ScoreboardFactory {
 
         List<Frame> frames = new ArrayList<>();
         for(int index = 0; index < Scoreboard.All_FRAMES_NUMBER - 1; index++) {
-            Frame e = new Frame();
-            e.setFirstThrow(Optional.of(generateBowlingThrow()));
-            e.setSecondThrow(Optional.of(generateBowlingThrow()));
-            frames.add(e);
+            Frame frame = new Frame();
+            frame.setFirstThrow(Optional.of(generateBowlingThrow()));
+            frame.setSecondThrow(Optional.of(generateBowlingThrow()));
+            frames.add(frame);
         }
         LastFrame lastFrame = new LastFrame();
         lastFrame.setThirdThrow(Optional.of(generateBowlingThrow()));
         lastFrame.setSecondThrow(Optional.of(generateBowlingThrow()));
         lastFrame.setFirstThrow(Optional.of(generateBowlingThrow()));
-        return new Scoreboard(frames, lastFrame);
+        frames.add(lastFrame);
+        return new Scoreboard(frames);
     }
 
     private static BowlingThrow generateBowlingThrow() {

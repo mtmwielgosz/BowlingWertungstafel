@@ -1,31 +1,31 @@
 package systems.hedgehog.model;
 
 import java.util.List;
+import java.util.Optional;
 
 public class Scoreboard {
 
     public static final int All_FRAMES_NUMBER = 10;
     private List<Frame> frames;
-    private LastFrame lastFrame;
 
-    public Scoreboard(List<Frame> frames, LastFrame lastFrame) {
+    public Scoreboard(List<Frame> frames) {
         this.frames = frames;
-        this.lastFrame = lastFrame;
     }
 
     public List<Frame> getFrames() {
         return frames;
     }
 
-    public LastFrame getLastFrame() {
-        return lastFrame;
+    public Frame getFrame(Integer frameNumber) {
+        return frames.get(frameNumber);
     }
 
-    public Frame getFrame(Integer frameNumber) {
-        if(frameNumber.equals(All_FRAMES_NUMBER - 1)) {
-            return lastFrame;
-        }
-        return frames.get(frameNumber);
+    public Integer getSum() {
+        return frames.stream().mapToInt(frame -> frame.getSum().orElse(0)).sum();
+    }
+
+    public Optional<Frame> getFirstEmptyFrame() {
+        return frames.stream().filter(frame -> !frame.isFinished()).findFirst();
     }
 
 }

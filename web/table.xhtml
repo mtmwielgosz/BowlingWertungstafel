@@ -40,20 +40,19 @@
         <td class="tg-baqh" width="43"><h:outputText value = "#{sessionBean.scoreboardService.getBowlingThrowResult(9,1)}" /></td>
         <td class="tg-baqh" width="43"><h:outputText value = "#{sessionBean.scoreboardService.getBowlingThrowResult(9,2)}" /></td>
         <td class="tg-baqh" width="43"><h:outputText value = "#{sessionBean.scoreboardService.getBowlingThrowResult(9,3)}" /></td>
-        <td class="tg-baqh" width="43"><h:outputText value = "#{sessionBean.scoreboardService.sum != null ? sessionBean.scoreboardService.sum : ''}" /></td>
+        <td class="tg-baqh" width="43"><h:outputText value = "#{sessionBean.scoreboardService.scoreboardSum}" /></td>
     </tr>
     <tr>
-        <td class="tg-baqh" colspan="2"><h:outputText value = "#{sessionBean.scoreboardService.getSumForFrame(0) != null ? sessionBean.scoreboardService.getSumForFrame(0) : ''}" /></td>
-        <td class="tg-baqh" colspan="2"><h:outputText value = "#{sessionBean.scoreboardService.getSumForFrame(1) != null ? sessionBean.scoreboardService.getSumForFrame(1) : ''}" /></td>
-        <td class="tg-baqh" colspan="2"><h:outputText value = "#{sessionBean.scoreboardService.getSumForFrame(2) != null ? sessionBean.scoreboardService.getSumForFrame(2) : ''}" /></td>
-        <td class="tg-baqh" colspan="2"><h:outputText value = "#{sessionBean.scoreboardService.getSumForFrame(3) != null ? sessionBean.scoreboardService.getSumForFrame(3) : ''}" /></td>
-        <td class="tg-baqh" colspan="2"><h:outputText value = "#{sessionBean.scoreboardService.getSumForFrame(4) != null ? sessionBean.scoreboardService.getSumForFrame(4) : ''}" /></td>
-        <td class="tg-baqh" colspan="2"><h:outputText value = "#{sessionBean.scoreboardService.getSumForFrame(5) != null ? sessionBean.scoreboardService.getSumForFrame(5) : ''}" /></td>
-        <td class="tg-baqh" colspan="2"><h:outputText value = "#{sessionBean.scoreboardService.getSumForFrame(6) != null ? sessionBean.scoreboardService.getSumForFrame(6) : ''}" /></td>
-        <td class="tg-baqh" colspan="2"><h:outputText value = "#{sessionBean.scoreboardService.getSumForFrame(7) != null ? sessionBean.scoreboardService.getSumForFrame(7) : ''}" /></td>
-        <td class="tg-baqh" colspan="2"><h:outputText value = "#{sessionBean.scoreboardService.getSumForFrame(8) != null ? sessionBean.scoreboardService.getSumForFrame(8) : ''}" /></td>
-        <td class="tg-baqh" colspan="3"><h:outputText value = "#{sessionBean.scoreboardService.getSumForFrame(9) != null ? sessionBean.scoreboardService.getSumForFrame(9) : ''}" /></td>
-        <td class="tg-baqh"><h:outputText value = "#{sessionBean.scoreboardService.sum != null ? sessionBean.scoreboardService.sum : ''}" /></td>
+        <td class="tg-baqh" colspan="2"><h:outputText value = "#{sessionBean.scoreboardService.getFrameSum(0).present ? sessionBean.scoreboardService.getFrameSum(0) : ''}" /></td>
+        <td class="tg-baqh" colspan="2"><h:outputText value = "#{sessionBean.scoreboardService.getFrameSum(1).present ? sessionBean.scoreboardService.getFrameSum(0) : ''}" /></td>
+        <td class="tg-baqh" colspan="2"><h:outputText value = "#{sessionBean.scoreboardService.getFrameSum(2).present ? sessionBean.scoreboardService.getFrameSum(0) : ''}" /></td>
+        <td class="tg-baqh" colspan="2"><h:outputText value = "#{sessionBean.scoreboardService.getFrameSum(3).present ? sessionBean.scoreboardService.getFrameSum(0) : ''}" /></td>
+        <td class="tg-baqh" colspan="2"><h:outputText value = "#{sessionBean.scoreboardService.getFrameSum(4).present ? sessionBean.scoreboardService.getFrameSum(0) : ''}" /></td>
+        <td class="tg-baqh" colspan="2"><h:outputText value = "#{sessionBean.scoreboardService.getFrameSum(5).present ? sessionBean.scoreboardService.getFrameSum(0) : ''}" /></td>
+        <td class="tg-baqh" colspan="2"><h:outputText value = "#{sessionBean.scoreboardService.getFrameSum(6).present ? sessionBean.scoreboardService.getFrameSum(0) : ''}" /></td>
+        <td class="tg-baqh" colspan="2"><h:outputText value = "#{sessionBean.scoreboardService.getFrameSum(7).present ? sessionBean.scoreboardService.getFrameSum(0) : ''}" /></td>
+        <td class="tg-baqh" colspan="2"><h:outputText value = "#{sessionBean.scoreboardService.getFrameSum(8).present ? sessionBean.scoreboardService.getFrameSum(0) : ''}" /></td>
+        <td class="tg-baqh" colspan="3"><h:outputText value = "#{sessionBean.scoreboardService.getFrameSum(9).present ? sessionBean.scoreboardService.getFrameSum(0) : ''}" /></td>
     </tr>
 </table>
 </body>
