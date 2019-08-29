@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous"/>
+	<link rel="stylesheet" href="styles.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"/>
+<h:head>
+    <title>Bowling Wertungstafel</title>
+</h:head>
+<h:body>
+	<div>
+
+		<ui:insert name = "header" >
+			<ui:include src = "header.xhtml" />
+		</ui:insert>
+
+		<div style="display: inline-block">
+			<img src="bowling.jpg" class="img-thumbnail" alt="Bowling"/>
+		</div>
+
+		<div style="display: inline-block">
+
+			<ui:insert name = "table" >
+				<ui:include src = "table.xhtml" />
+			</ui:insert>
+
+			<br/><br/>
+
+			<ui:insert name = "input" >
+				<ui:include src = "input.xhtml" />
+			</ui:insert>
+
+		</div>
+	</div>
+</h:body>
+</html>
+
