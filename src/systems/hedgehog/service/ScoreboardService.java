@@ -37,7 +37,7 @@ public class ScoreboardService {
 
         Optional<Bonus> currentBonus = scoreboard.getFrame(whichFrame).getThrow(whichThrow).get().getBonus();
         OptionalInt currentScores = scoreboard.getFrame(whichFrame).getThrow(whichThrow).get().getScores();
-        if(currentScores.isPresent() && currentBonus != null && currentBonus.isPresent()) {
+        if(currentScores.isPresent() && currentBonus.isPresent()) {
             if(currentScores.getAsInt() == 0 && currentBonus.get().equals(Bonus.STRIKE)) {
                 return " ";
             }
