@@ -1,13 +1,14 @@
 package systems.hedgehog.controller;
 
-import systems.hedgehog.factory.MessageFactory;
+import systems.hedgehog.model.BowlingThrow;
 import systems.hedgehog.service.MessageService;
 import systems.hedgehog.service.ScoreboardService;
+import systems.hedgehog.model.Messages;
 
 import javax.ejb.EJB;
-import javax.faces.annotation.ManagedProperty;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import java.util.Optional;
 
 @ManagedBean
 @SessionScoped
@@ -19,7 +20,7 @@ public class SessionBean {
     @EJB
     private MessageService messageService;
 
-    private String newBowlingThrow = MessageFactory.EMPTY;
+    private String newBowlingThrow = Messages.EMPTY;
 
     public SessionBean() {
     }
@@ -45,9 +46,26 @@ public class SessionBean {
     }
 
     public void setNewBowlingThrow(String numberOfPins) {
-        newBowlingThrow = numberOfPins;
-        scoreboardService.updateScoreboard(numberOfPins);
-        messageService.updateMessage();
+
+        if(!scoreboardService.isGameOver()) {
+            if (scoreboardService.validateNumberOfPins(numberOfPins)) {
+                Optional<BowlingThrow> addedBowlingThrow = scoreboardService.updateScoreboard(numberOfPins);
+                messageService.updateMessage(addedBowlingThrow);
+            } else {
+                messageService.updateValidationErrorMessage();
+            }
+        }
+    }
+
+    public void setNewGame(String start) {
+        if(Messages.START_GAME.equals(start)) {
+            scoreboardService.resetScoreboard();
+            messageService.updateNewGameMessage();
+        }
+    }
+
+    public String getNewGame() {
+        return Messages.START_GAME;
     }
 
 }

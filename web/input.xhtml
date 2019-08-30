@@ -3,7 +3,8 @@
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core" xml:lang="en" lang="en">
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:a="http://java.sun.com/jsf/composite"
+      xmlns:p="http://primefaces.org/ui" xml:lang="en" lang="en">
 <body>
     <h:form class="form-inline" >
 
@@ -16,9 +17,14 @@
             <span class="tooltiptext">Die gültige Werte: 0-10.</span>
         </div>
 
+        <p:focus />
         <h:inputText id="setNewBowlingThrow" lass="form-control mb-2 mr-sm-2" value = "#{sessionBean.newBowlingThrow}"></h:inputText>
-        <h:commandButton class="btn btn-primary" value = "Speichern">
+        <h:commandButton class="btn btn-primary" style="margin: 10px" value = "Speichern">
             <f:ajax execute="setNewBowlingThrow" render="@all" />
+        </h:commandButton>
+        <h:inputHidden id="setNewGame" value = "#{sessionBean.newGame}"></h:inputHidden>
+        <h:commandButton class="btn btn-secondary" value = "Neues Spiel anfangen">
+            <f:ajax execute="setNewGame" render="@all" />
         </h:commandButton>
 
     </h:form>
