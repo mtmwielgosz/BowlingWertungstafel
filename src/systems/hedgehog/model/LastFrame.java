@@ -35,9 +35,6 @@ public class LastFrame extends Frame {
 
         Boolean inserted = super.setNextThrow(nextThrow);
         if(!inserted && !thirdThrow.get().getScores().isPresent() && (super.getFirstThrow().get().getScores().getAsInt() + super.getSecondThrow().get().getScores().getAsInt() >= BowlingThrow.MAX_SCORES)) {
-            if((super.getFirstThrow().get().getScores().getAsInt() + super.getSecondThrow().get().getScores().getAsInt()) < BowlingThrow.MAX_SCORES) {
-                nextThrow.get().setScores(OptionalInt.of(0));
-            }
             thirdThrow = nextThrow;
             return true;
         }
@@ -51,6 +48,7 @@ public class LastFrame extends Frame {
     private Optional<BowlingThrow> generateZeroBowlingThrow() {
         BowlingThrow bowlingThrow = new BowlingThrow();
         bowlingThrow.setScores(OptionalInt.of(0));
+        bowlingThrow.setBonus(Optional.empty());
         return Optional.of(bowlingThrow);
     }
 
