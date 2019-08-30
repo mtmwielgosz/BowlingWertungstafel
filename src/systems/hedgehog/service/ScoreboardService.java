@@ -28,6 +28,7 @@ public class ScoreboardService {
     private BowlingThrow generateNextBowlingThrow(String nextNumberOfPins) {
         BowlingThrow nextThrow = new BowlingThrow();
         nextThrow.setScores(OptionalInt.of(Integer.parseInt(nextNumberOfPins)));
+        nextThrow.setBonus(Optional.empty());
         return nextThrow;
     }
 
