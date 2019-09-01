@@ -16,18 +16,20 @@ public class ScoreboardFactory {
             frames.add(generateEmptyFrame(new Frame()));
         }
         LastFrame lastFrame = generateEmptyFrame(new LastFrame());
-        lastFrame.setThirdThrow(Optional.of(generateEmptyBowlingThrow()));
         frames.add(lastFrame);
         return new Scoreboard(frames);
     }
 
-    private static <T extends Frame> T generateEmptyFrame(T frame) {
+    public static <T extends Frame> T generateEmptyFrame(T frame) {
         frame.setFirstThrow(Optional.of(generateEmptyBowlingThrow()));
         frame.setSecondThrow(Optional.of(generateEmptyBowlingThrow()));
+        if(frame instanceof LastFrame) {
+            ((LastFrame) frame).setThirdThrow(Optional.of(generateEmptyBowlingThrow()));
+        }
         return frame;
     }
 
-    private static BowlingThrow generateEmptyBowlingThrow() {
+    public static BowlingThrow generateEmptyBowlingThrow() {
         BowlingThrow bowlingThrow = new BowlingThrow();
         bowlingThrow.setScore(OptionalInt.empty());
         bowlingThrow.setBonus(Optional.empty());

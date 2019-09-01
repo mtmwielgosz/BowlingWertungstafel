@@ -19,5 +19,4 @@ public class Messages {
     public static final String ERROR = "Sie können nicht mehr als 10 Pins zusammen in einem Frame abräumen.";
     public static final String VALUE_INVALID_HEADER = "Falscher Wert!";
     public static final String VALUE_INVALID = "Bitte geben Sie den richtigen Wert ein (0-10).";
-
 }

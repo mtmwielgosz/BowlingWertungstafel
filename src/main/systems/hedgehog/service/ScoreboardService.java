@@ -35,6 +35,7 @@ public class ScoreboardService {
     public String getBowlingThrowResult(Integer frameNumber, Integer throwNumberInFrame) {
         return scoreboard.getFrame(frameNumber).getThrow(throwNumberInFrame).get().toString();
     }
+
     public Integer getSumOfScoreboard() {
         return scoreboard.getSumOfScoreboard();
     }

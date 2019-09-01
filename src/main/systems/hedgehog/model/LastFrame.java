@@ -71,7 +71,6 @@ public class LastFrame extends Frame {
         return nextThrow;
     }
 
-
     private Optional<BowlingThrow> setLastThrowAndEndGame(Optional<BowlingThrow> nextThrow) {
 
         if (!isSpare(getSecondThrow()) && !isStrike(getSecondThrow())) {

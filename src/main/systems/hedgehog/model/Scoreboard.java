@@ -35,7 +35,6 @@ public class Scoreboard {
         return OptionalInt.of(currentFrame.getRawSum().orElse(0) + getBonus(frameNumber));
     }
 
-
     private boolean isLastFrame(Integer frameNumber) {
         return frameNumber == All_FRAMES_NUMBER - 1;
     }
