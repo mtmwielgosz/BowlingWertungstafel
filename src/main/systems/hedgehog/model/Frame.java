@@ -1,5 +1,6 @@
 package systems.hedgehog.model;
 
+import systems.hedgehog.factory.BowlingThrowFactory;
 import systems.hedgehog.factory.ScoreboardFactory;
 
 import java.util.Optional;
@@ -51,7 +52,7 @@ public class Frame {
     private Optional<BowlingThrow> setAndReturnFirstThrow(Optional<BowlingThrow> nextThrow) {
         if(isStrike(nextThrow)) {
             nextThrow.get().setBonus(Optional.of(Bonus.STRIKE));
-            secondThrow = Optional.of(ScoreboardFactory.generateBlankBowlingThrow());
+            secondThrow = Optional.of(BowlingThrowFactory.generateBlankBowlingThrow());
         }
         firstThrow = nextThrow;
         return nextThrow;
@@ -59,7 +60,7 @@ public class Frame {
 
     private Optional<BowlingThrow> setAndReturnSecondThrow(Optional<BowlingThrow> nextThrow) {
         if(isOutOfRange(nextThrow)) {
-            return Optional.of(ScoreboardFactory.generateErrorBowlingThrow());
+            return Optional.of(BowlingThrowFactory.generateErrorBowlingThrow());
         }
         if(isSpare(nextThrow)) {
             nextThrow.get().setBonus(Optional.of(Bonus.SPARE));

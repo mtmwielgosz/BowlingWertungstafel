@@ -7,9 +7,9 @@ public enum Bonus {
     BLANK(" ", Messages.BLANK, Messages.BLANK),
     ERROR("\\", Messages.ERROR_HEADER, Messages.ERROR);
 
-    private String sign;
-    private String messageHeader;
-    private String message;
+    private final String sign;
+    private final String messageHeader;
+    private final String message;
 
     public String getSign() {
         return sign;

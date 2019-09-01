@@ -46,12 +46,12 @@ public class Scoreboard {
             return getNextThrowScore(frameNumber);
         }
         if(isStrikeInFrame(currentFrame)) {
-            return getNextSpikeBonus(frameNumber);
+            return getNextStrikeBonus(frameNumber);
         }
         return 0;
     }
 
-    private Integer getNextSpikeBonus(Integer frameNumber) {
+    private Integer getNextStrikeBonus(Integer frameNumber) {
         return getNextThrowScore(frameNumber) + getAfterNextThrowScore(frameNumber);
     }
 

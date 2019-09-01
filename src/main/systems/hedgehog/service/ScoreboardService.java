@@ -1,7 +1,9 @@
 package systems.hedgehog.service;
 
+import systems.hedgehog.factory.BowlingThrowFactory;
 import systems.hedgehog.factory.ScoreboardFactory;
 import systems.hedgehog.model.BowlingThrow;
+import systems.hedgehog.model.Frame;
 import systems.hedgehog.model.Scoreboard;
 
 import javax.ejb.Stateful;
@@ -29,7 +31,7 @@ public class ScoreboardService {
 
     private Optional<BowlingThrow> setAndReturnNextBowlingThrow(Integer nextNumberOfPins) {
         return scoreboard.getFirstEmptyFrame().get().setNextThrow(
-                Optional.of(ScoreboardFactory.generateBowlingThrow(nextNumberOfPins, Optional.empty())));
+                Optional.of(BowlingThrowFactory.generateBowlingThrow(OptionalInt.of(nextNumberOfPins), Optional.empty())));
     }
 
     public String getBowlingThrowResult(Integer frameNumber, Integer throwNumberInFrame) {
@@ -45,7 +47,7 @@ public class ScoreboardService {
     }
 
     public Boolean isGameOver() {
-        return scoreboard.getFrames().stream().allMatch(frame -> frame.isFinished());
+        return scoreboard.getFrames().stream().allMatch(Frame::isFinished);
     }
 
     public Boolean validateNumberOfPins(String numberOfPins) {

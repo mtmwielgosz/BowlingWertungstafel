@@ -3,12 +3,13 @@ package systems.hedgehog.service;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import systems.hedgehog.factory.ScoreboardFactory;
+import systems.hedgehog.factory.BowlingThrowFactory;
 import systems.hedgehog.model.Bonus;
 import systems.hedgehog.model.BowlingThrow;
 import systems.hedgehog.model.Messages;
 
 import java.util.Optional;
+import java.util.OptionalInt;
 
 public class MessageServiceTest {
 
@@ -35,7 +36,7 @@ public class MessageServiceTest {
     @Test
     public void shouldShowStrikeMessageWhenStrikeBowlingThrowAdded() {
         // given
-        BowlingThrow strikeBowlingThrow = ScoreboardFactory.generateBowlingThrow(10, Optional.of(Bonus.STRIKE));
+        BowlingThrow strikeBowlingThrow = BowlingThrowFactory.generateBowlingThrow(OptionalInt.of(10), Optional.of(Bonus.STRIKE));
 
         // when
         messageService.updateMessage(Optional.of(strikeBowlingThrow));
@@ -48,7 +49,7 @@ public class MessageServiceTest {
     @Test
     public void shouldShowSpareMessageWhenSpareBowlingThrowAdded() {
         // given
-        BowlingThrow strikeBowlingThrow = ScoreboardFactory.generateBowlingThrow(5, Optional.of(Bonus.SPARE));
+        BowlingThrow strikeBowlingThrow = BowlingThrowFactory.generateBowlingThrow(OptionalInt.of(5), Optional.of(Bonus.SPARE));
 
         // when
         messageService.updateMessage(Optional.of(strikeBowlingThrow));
@@ -61,7 +62,7 @@ public class MessageServiceTest {
     @Test
     public void shouldShowMissMessageWhenMissBowlingThrowAdded() {
         // given
-        BowlingThrow strikeBowlingThrow = ScoreboardFactory.generateBowlingThrow(0, Optional.of(Bonus.MISS));
+        BowlingThrow strikeBowlingThrow = BowlingThrowFactory.generateBowlingThrow(OptionalInt.of(0), Optional.of(Bonus.MISS));
 
         // when
         messageService.updateMessage(Optional.of(strikeBowlingThrow));
@@ -74,7 +75,7 @@ public class MessageServiceTest {
     @Test
     public void shouldShowRegularMessageWhenRegularBowlingThrowAdded() {
         // given
-        BowlingThrow strikeBowlingThrow = ScoreboardFactory.generateBowlingThrow(2, Optional.empty());
+        BowlingThrow strikeBowlingThrow = BowlingThrowFactory.generateBowlingThrow(OptionalInt.of(2), Optional.empty());
 
         // when
         messageService.updateMessage(Optional.of(strikeBowlingThrow));
