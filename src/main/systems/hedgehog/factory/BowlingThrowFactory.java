@@ -15,7 +15,6 @@ public class BowlingThrowFactory {
     }
 
     public static BowlingThrow generateEmptyBowlingThrow() {
-
         return generateBowlingThrow(OptionalInt.empty(), Optional.empty());
     }
 
