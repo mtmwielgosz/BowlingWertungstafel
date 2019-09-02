@@ -13,8 +13,7 @@ public class ScoreboardFactory {
         for(int index = 0; index < Scoreboard.All_FRAMES_NUMBER - 1; index++) {
             frames.add(FrameFactory.generateEmptyFrame(new Frame()));
         }
-        LastFrame lastFrame = FrameFactory.generateEmptyFrame(new LastFrame());
-        frames.add(lastFrame);
+        frames.add(FrameFactory.generateEmptyFrame(new LastFrame()));
         return new Scoreboard(frames);
     }
 
